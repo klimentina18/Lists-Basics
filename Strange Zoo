@@ -1,0 +1,16 @@
+teil = input()
+body = input()
+head = input()
+
+meerkat = [head , body , teil]
+
+print(meerkat)
+
+
+##teil = input()
+#body = input()
+#head = input()
+
+#meerkat = [teil , body , head]
+#meerkat[0], meerkat[2] = meerkat[2], meerkat[0]
+#print(meerkat)
