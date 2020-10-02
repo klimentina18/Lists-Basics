@@ -1,0 +1,8 @@
+n = input()
+strings = n.split()
+numbers = []
+
+for i in strings:
+    number = -int(i)
+    numbers.append(number)
+print(numbers)
