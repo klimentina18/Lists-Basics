@@ -1,0 +1,43 @@
+events = input().split("|")
+energy = 100
+coins = 100
+is_end = False
+
+for event in events:
+    event_str = event.split("-")
+    text = event_str[0]
+    energy_coins = event_str[1]
+
+    if text == "rest":
+        if energy + int(energy_coins) > 100:
+            energy = 100
+            print("You gained 0 energy.")
+            print(f"Current energy: 100.")
+        else:
+            energy += int(energy_coins)
+            print(f"You gained {energy_coins} energy.")
+            print(f"Current energy: {energy}.")
+
+    elif text == "order":
+        if energy >= 30:
+            coins += int(energy_coins)
+            energy -= 30
+            print(f"You earned {energy_coins} coins.")
+        else:
+            energy += 50
+            print("You had to rest!")
+
+    elif text != "rest" or text != "order":
+        coins -= int(energy_coins)
+        if coins <= 0:
+            is_end = True
+            break
+        else:
+            print(f"You bought {text}.")
+
+if not is_end:
+    print(f"Day completed!")
+    print(f"Coins: {coins}")
+    print(f"Energy: {energy}")
+elif is_end:
+    print(f"Closed! Cannot afford {text}.")
