@@ -1,0 +1,33 @@
+gifts = input().split()
+command = input()
+word_one = "OutOfStock"
+word_two = "Required"
+word_three = "JustInCase"
+
+
+list_gifts = []
+for i in gifts:
+    list_gifts.append(i)
+
+while command != "No Money":
+    text = command.split()
+    if word_one in text:
+        for i in range (len(list_gifts)):
+            if text[1] in list_gifts:
+                index = list_gifts.index(text[1])
+                list_gifts[index] = None
+    elif word_two in text:
+        index = int(text[2])
+        if len(list_gifts) > index >= 0:
+            list_gifts[index] = text[1]
+    else:
+         if word_three in text:
+             for i in range (len(list_gifts)):
+                 list_gifts[-1] = text[1]
+
+    command = input()
+
+while None in list_gifts:
+    list_gifts.remove(None)
+for i in list_gifts:
+    print(i, end= " ")
