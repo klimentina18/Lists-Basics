@@ -1,0 +1,24 @@
+strings = input().split()
+word_one = "A"
+word_two = "B"
+a = 11
+b = 11
+neu = []
+is_end = False
+
+for i in strings:
+    if i in neu:
+        continue
+    neu.append(i)
+    strings_i = " ".join(i)
+    if word_one in strings_i:
+        a -= 1
+    if word_two in strings_i:
+        b -= 1
+    if  a < 7 or b < 7:
+        is_end = True
+        break
+
+print(f"Team A - {a}; Team B - {b}")
+if is_end:
+    print(f"Game was terminated")
