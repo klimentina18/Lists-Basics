@@ -1,0 +1,19 @@
+cards = input().split()
+faro = int(input())
+
+middle_len = int(len(cards) / 2)   # len(cards) // 2
+
+for i in range (faro):
+    result = []
+
+    for index in range (middle_len):
+        first = cards[index]
+        second_index = index + middle_len
+        second = cards[second_index]
+
+        result.append(first)
+        result.append(second)
+
+    cards = result
+
+print(cards)
