@@ -1,0 +1,13 @@
+strings = input().split()
+n = int(input())
+
+numbers = []
+for i in strings:
+    number = int(i)
+    numbers.append(number)
+
+for i in range (n):
+    numbers.remove(min(numbers))
+
+
+print(numbers)
